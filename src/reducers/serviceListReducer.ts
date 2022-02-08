@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import {
   PUT_SERVICE_LIST,
   SET_SERVICE_DELETING_STATUS,
@@ -20,7 +21,7 @@ const initialState = {
 
 export default function serviceListReducer(
   state = initialState,
-  action: { type: string; payload: any }
+  action: AnyAction
 ) {
   switch (action.type) {
     case PUT_SERVICE_LIST:

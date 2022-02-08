@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import {
   SET_SERVICE_LOADING_STATUS,
   SET_SERVICE_SAVING_STATUS,
@@ -20,7 +21,7 @@ const initialState = {
 
 export default function serviceEditReducer(
   state = initialState,
-  action: { type: string; payload: any }
+  action: AnyAction
 ) {
   switch (action.type) {
     case SET_SERVICE_LOADING_STATUS:
