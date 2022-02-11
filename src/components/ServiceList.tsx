@@ -45,7 +45,7 @@ export default function ServiceList() {
 
   return (
     <div className="list-group">
-      {loadingStatus === 'success' &&
+      {services &&
         services.map((o, i) => (
           <div
             key={o.id}

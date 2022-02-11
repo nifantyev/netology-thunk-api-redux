@@ -2,11 +2,7 @@ import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getService, updateService } from '../api';
 import { useAppDispatch, useAppSelector } from '../hooks';
-import {
-  setServiceLoadingStatus,
-  setServiceSavingStatus,
-  updateEditServiceProp,
-} from '../actions/actionCreators';
+import { updateEditServiceProp } from '../actions/actionCreators';
 import Spinner from './Spinner';
 import ErrorMessage from './ErrorMessage';
 
@@ -21,11 +17,6 @@ export default function ServiceEdit() {
     (store) => store.serviceEdit.savingStatus
   );
   const service = useAppSelector((store) => store.serviceEdit.service);
-
-  useEffect(() => {
-    dispatch(setServiceLoadingStatus('idle'));
-    dispatch(setServiceSavingStatus('idle'));
-  }, [dispatch]);
 
   useEffect(() => {
     getService(Number(id));
@@ -66,7 +57,7 @@ export default function ServiceEdit() {
       {savingStatus === 'error' && (
         <ErrorMessage message="Произошла ошибка при сохранении" />
       )}
-      {loadingStatus === 'success' && (
+      {service.id !== 0 && (
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">

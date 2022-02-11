@@ -20,7 +20,7 @@ export async function getServices() {
     }
     const data = await response.json();
     dispatch(putServiceList(data));
-    dispatch(setServiceListLoadingStatus('success'));
+    dispatch(setServiceListLoadingStatus('idle'));
   } catch (e) {
     dispatch(setServiceListLoadingStatus('error'));
   }
@@ -37,7 +37,7 @@ export async function getService(id: number) {
     }
     const data = await response.json();
     dispatch(editService(data));
-    dispatch(setServiceLoadingStatus('success'));
+    dispatch(setServiceLoadingStatus('idle'));
   } catch (e) {
     dispatch(setServiceLoadingStatus('error'));
   }
@@ -56,7 +56,7 @@ export async function updateService(service: ServiceFull) {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
-    dispatch(setServiceSavingStatus('success'));
+    dispatch(setServiceSavingStatus('idle'));
   } catch (e) {
     dispatch(setServiceSavingStatus('error'));
     throw e;
@@ -75,7 +75,7 @@ export async function deleteService(id: number) {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
-    dispatch(setServiceDeletingStatus(id, 'success'));
+    dispatch(setServiceDeletingStatus(id, 'idle'));
   } catch (e) {
     dispatch(setServiceDeletingStatus(id, 'error'));
   }
