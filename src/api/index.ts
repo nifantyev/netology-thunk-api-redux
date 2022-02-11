@@ -7,7 +7,7 @@ import {
   setServiceSavingStatus,
   setServiceDeletingStatus,
 } from '../actions/actionCreators';
-import { ServiceFull } from '../types';
+import { ServiceFull } from '../models';
 
 const { dispatch } = store;
 

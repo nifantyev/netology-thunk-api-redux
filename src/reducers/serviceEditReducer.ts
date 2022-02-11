@@ -5,7 +5,8 @@ import {
   UPDATE_EDIT_SERVICE_PROP,
   EDIT_SERVICE,
 } from '../actions/actionTypes';
-import { AsyncOperationStatus, ServiceFull } from '../types';
+import { AsyncOperationStatus } from '../types';
+import { ServiceFull } from '../models';
 
 export interface ServiceEditState {
   service: ServiceFull;

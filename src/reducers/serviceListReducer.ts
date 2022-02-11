@@ -5,7 +5,8 @@ import {
   SET_SERVICE_LIST_LOADING_STATUS,
 } from '../actions/actionTypes';
 
-import { AsyncOperationStatus, Service } from '../types';
+import { AsyncOperationStatus } from '../types';
+import { Service } from '../models';
 
 export interface ServiceListState {
   loadingStatus: AsyncOperationStatus;
