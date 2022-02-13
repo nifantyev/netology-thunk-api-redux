@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getService, updateService } from '../api';
-import { useAppDispatch, useAppSelector } from '../hooks';
+import { useAppDispatch, useAppSelector } from '../store';
 import { updateEditServiceProp } from '../actions/actionCreators';
 import Spinner from './Spinner';
 import ErrorMessage from './ErrorMessage';

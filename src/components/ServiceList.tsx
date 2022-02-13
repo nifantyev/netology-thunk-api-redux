@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getServices, deleteService } from '../api';
-import { useAppSelector } from '../hooks';
+import { useAppSelector } from '../store';
 import ErrorMessage from './ErrorMessage';
 import { EditIcon, DeleteIcon } from './Icons';
 import Spinner from './Spinner';
